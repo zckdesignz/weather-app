@@ -248,8 +248,7 @@ function getWeatherDescription(code) {
 async function getWeather() {
   // trim() removes empty spaces from the beginning and end
   // Example: "  Nashville  " becomes "Nashville"
-  console.log("Dew Point:", weatherData.current.dew_point_2m);
-  console.log("Wind Direction:", weatherData.current.wind_direction_10m);
+  
   const city = cityInput.value.trim();
 
   console.log("----- New Weather Search -----");
@@ -363,6 +362,9 @@ async function getWeather() {
     }
 
     const weatherData = await weatherResponse.json();
+    // REMOVE THESE
+    console.log("Dew Point:", weatherData.current.dew_point_2m);
+    console.log("Wind Direction:", weatherData.current.wind_direction_10m);
     console.log("Full weather data:", weatherData);
 
     // Make sure the current weather object exists
